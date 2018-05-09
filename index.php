@@ -5,9 +5,12 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
 	$message = array(
 				"message" => [array(
-					"text" => "Welcome to our store!",
 					"text" => $text
-				)]
+				),
+				array(
+					"text" => "hello"
+				)
+				]
 			);
 	echo json_encode($message);
 }
