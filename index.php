@@ -5,10 +5,9 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
 	$message = array(
 				"message" => array(
-			   "text" => "Welcome to our store!",
-			   "text" => "How can I help you?"
+					"text" => "Welcome to our store!"
 				)
-			)
+			);
 	echo json_encode($message);
 }
 /* Process only when method is POST
