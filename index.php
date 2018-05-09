@@ -7,9 +7,10 @@ if($method == 'GET'){
 	$message = {
 			 "messages": [
 			   {"text": "hello"},
-			   {"text": "this is server"}
+			   {"text": "this is server"},
+			   {"text": $text}
 			 ]
 			}
-	echo $message;
+	echo $text;
 }
->
+?>
