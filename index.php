@@ -3,12 +3,24 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
-	$message = array(
+	/*$message = array(
 				"messages" => [array(
 					"text" => $text
 				),
 				array(
 					"text" => "hello"
+				)
+				]
+			);
+	*/		
+	$message = array(
+				"messages" => [array(
+					"attachment" => array(
+					"type" => "image",
+					"payload" => array(
+					"url" => "https://rockets.chatfuel.com/assets/welcome.png"
+					)
+					)		
 				)
 				]
 			);
@@ -20,6 +32,21 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
    {"text": "Welcome to our store!"},
    {"text": "How can I help you?"}
  ]
+}
+*/
+
+/*
+{
+  "messages": [
+    {
+      "attachment": {
+        "type": "image",
+        "payload": {
+          "url": "https://rockets.chatfuel.com/assets/welcome.png"
+        }
+      }
+    }
+  ]
 }
 */
 
