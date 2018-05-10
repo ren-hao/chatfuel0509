@@ -1,6 +1,6 @@
 <?php
 $method = $_SERVER['REQUEST_METHOD'];
-
+$serverLocation = 'https://chatfuel0509.herokuapp.com/';
 if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
 	
@@ -18,7 +18,7 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 					"attachment" => array(
 					"type" => "image",
 					"payload" => array(
-					"url" => __DIR__ .'\\'.$imagerul
+					"url" => $serverLocation . $imagerul
 					)
 					)		
 				)
