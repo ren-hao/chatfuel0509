@@ -18,7 +18,7 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 					"attachment" => array(
 					"type" => "image",
 					"payload" => array(
-					"url" => __DIR__ .$imagerul
+					"url" => __DIR__ .'\\'.$imagerul
 					)
 					)		
 				)
