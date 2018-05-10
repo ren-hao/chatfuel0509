@@ -3,6 +3,27 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
+	
+	//$filepath = sprintf("../response/%s.json", $text);	
+	$responseSet = file_get_contents('response/'+$text+'.json');
+	$responseSetJson = json_decode($responseSet);
+	$imageCount = count($responseSetJson->imageUrl);
+	$imagerul = $responseSetJson->imageUrl[rand(0, $imageCount - 1)];
+		
+	$message = array(
+				"messages" => [array(
+					"attachment" => array(
+					"type" => "image",
+					"payload" => array(
+					"url" => $imagerul
+					)
+					)		
+				)
+				]
+			);
+	echo json_encode($message);
+}
+
 	/*$message = array(
 				"messages" => [array(
 					"text" => $text
@@ -12,20 +33,8 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 				)
 				]
 			);
-	*/		
-	$message = array(
-				"messages" => [array(
-					"attachment" => array(
-					"type" => "image",
-					"payload" => array(
-					"url" => "https://rockets.chatfuel.com/assets/welcome.png"
-					)
-					)		
-				)
-				]
-			);
-	echo json_encode($message);
-}
+	*/
+
 /*
 {
  "messages": [
