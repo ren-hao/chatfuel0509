@@ -4,11 +4,14 @@ $method = $_SERVER['REQUEST_METHOD'];
 if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
 	
-	//$filepath = sprintf("../response/%s.json", $text);	
-	$responseSet = file_get_contents('response/'+$text+'.json');
-	$responseSetJson = json_decode($responseSet);
-	$imageCount = count($responseSetJson->imageUrl);
-	$imagerul = $responseSetJson->imageUrl[rand(0, $imageCount - 1)];
+	//$filepath = sprintf("../response/%s.json", $text);
+	echo __DIR__ . '/response/' . $text . '.json';
+	$responseSet = file_get_contents(__DIR__ . '\\response\\' . $text . '.json');
+	$responseSetJson = json_decode($responseSet, JSON_UNESCAPED_UNICODE);
+	$imageCount = count($responseSetJson['imageUrl']);
+	echo $imageCount;
+
+	$imagerul = $responseSetJson['imageUrl'][rand(0, $imageCount - 1)];
 		
 	$message = array(
 				"messages" => [array(
