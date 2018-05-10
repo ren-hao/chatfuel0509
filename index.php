@@ -5,11 +5,11 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	$text = $_GET['msg'];
 	
 	//$filepath = sprintf("../response/%s.json", $text);
-	echo __DIR__ . '/response/' . $text . '.json';
+	//echo __DIR__ . '/response/' . $text . '.json';
 	$responseSet = file_get_contents(__DIR__ . '\\response\\' . $text . '.json');
 	$responseSetJson = json_decode($responseSet, JSON_UNESCAPED_UNICODE);
 	$imageCount = count($responseSetJson['imageUrl']);
-	echo $imageCount;
+	//echo $imageCount;
 
 	$imagerul = $responseSetJson['imageUrl'][rand(0, $imageCount - 1)];
 		
@@ -18,7 +18,7 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 					"attachment" => array(
 					"type" => "image",
 					"payload" => array(
-					"url" => $imagerul
+					"url" => __DIR__ .$imagerul
 					)
 					)		
 				)

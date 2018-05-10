@@ -1,9 +1,9 @@
 {
   "imageUrl": [
-	  "imagesfile/深海/img1.jpg",
-      "imagesfile/深海/img2.jpgg",
-      "imagesfile/深海/img3.jpg",
-	  "imagesfile/深海/img4.jpg",
-	  "imagesfile/深海/img5.jpg"	  
+	  "/imagesfile/深海/img1.jpg",
+      "/imagesfile/深海/img2.jpg",
+      "/imagesfile/深海/img3.jpg",
+	  "/imagesfile/深海/img4.jpg",
+	  "/imagesfile/深海/img5.jpg"	  
   ]
 }
