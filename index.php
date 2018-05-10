@@ -6,7 +6,7 @@ if (isset($_GET['msg']) && ! empty($_GET['msg'])){
 	
 	//$filepath = sprintf("../response/%s.json", $text);
 	//echo __DIR__ . '/response/' . $text . '.json';
-	$responseSet = file_get_contents(__DIR__ . '\\response\\' . $text . '.json');
+	$responseSet = file_get_contents('response/' . $text . '.json');
 	$responseSetJson = json_decode($responseSet, JSON_UNESCAPED_UNICODE);
 	$imageCount = count($responseSetJson['imageUrl']);
 	//echo $imageCount;
