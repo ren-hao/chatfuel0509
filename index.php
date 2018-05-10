@@ -1,4 +1,3 @@
-<meta charset="utf-8"> 
 <?php
 $method = $_SERVER['REQUEST_METHOD'];
 $serverLocation = 'https://chatfuel0509.herokuapp.com/';
